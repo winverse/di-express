@@ -72,12 +72,8 @@ export class NoticeService {
     return await this.noticeRepository.bulkCreate(notices);
   }
   // update notice
-  async update(
-    body: NoticeUpdateBodyDto,
-    lectureId: string,
-    companyId: string,
-  ) {
-    const notice = await this.noticeRepository.findById(lectureId);
+  async update(body: NoticeUpdateBodyDto, noticeId: string, companyId: string) {
+    const notice = await this.noticeRepository.findById(noticeId);
 
     if (!notice) {
       throw new NotFoundException(NOT_FOUND_NOTICE);
@@ -96,15 +92,15 @@ export class NoticeService {
       updatedAt: new Date(),
     };
 
-    return await this.noticeRepository.update(input, lectureId);
+    return await this.noticeRepository.update(input, noticeId);
   }
   // notice set publish
   async setPublish(
     body: NoticeSetPublishBodyDto,
-    lectureId: string,
+    noticeId: string,
     companyId: string,
   ) {
-    const notice = await this.noticeRepository.findById(lectureId);
+    const notice = await this.noticeRepository.findById(noticeId);
 
     if (!notice) {
       throw new NotFoundException(NOT_FOUND_NOTICE);
@@ -118,7 +114,7 @@ export class NoticeService {
       throw new UnauthorizedException(NOT_NOTICE_OWNER);
     }
 
-    return await this.noticeRepository.setPublish(body.isPublished, lectureId);
+    return await this.noticeRepository.setPublish(body.isPublished, noticeId);
   }
   // notice register
   async register(body: NoticeRegisterBodyDto, userId: string) {
@@ -198,8 +194,8 @@ export class NoticeService {
     };
   }
   // load notice detail
-  async detail(lectureId: string) {
-    const notice = await this.noticeRepository.findById(lectureId);
+  async detail(noticeId: string) {
+    const notice = await this.noticeRepository.findById(noticeId);
 
     if (!notice) {
       throw new NotFoundException(NOT_FOUND_NOTICE);
@@ -209,7 +205,7 @@ export class NoticeService {
       throw new ForbiddenException(ALREADY_DELETED_NOTICE);
     }
 
-    const detail = await this.noticeRepository.detail(lectureId);
+    const detail = await this.noticeRepository.detail(noticeId);
     const { applicantIds, ...result } = this.setApplicantsInfo(detail)[0];
 
     return result;
@@ -249,8 +245,8 @@ export class NoticeService {
       return result;
     }, [] as NoticeParseResult[]);
   }
-  async delete(lectureId: string) {
-    const notice = await this.noticeRepository.findById(lectureId, {
+  async delete(noticeId: string) {
+    const notice = await this.noticeRepository.findById(noticeId, {
       join: true,
     });
 
@@ -266,6 +262,6 @@ export class NoticeService {
       throw new ConfilctException(ALREADY_DELETED_NOTICE);
     }
 
-    return await this.noticeRepository.delete(lectureId);
+    return await this.noticeRepository.delete(noticeId);
   }
 }

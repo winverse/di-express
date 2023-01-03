@@ -18,7 +18,7 @@ import {
   ALREADY_DELETED_NOTICE,
   ALREADY_EXISTS_APPLICANTS,
   CANNOT_REGISTER_NOTICES,
-  DUPLICATED_NOTICES_TITLE,
+  DUPLICATED_NOTICE_TITLE,
   EXISTS_ALREADY_TAKEN_NOTICE,
   NOT_FOUND_NOTICE,
   NOT_NOTICE_OWNER,
@@ -43,7 +43,7 @@ export class NoticeService {
     );
 
     if (checkDuplicatedByTitle) {
-      throw new ConfilctException(DUPLICATED_NOTICES_TITLE);
+      throw new ConfilctException(DUPLICATED_NOTICE_TITLE);
     }
 
     return await this.noticeRepository.create(notice);
@@ -62,7 +62,7 @@ export class NoticeService {
     const duplicatedTitles = checkDuplicatedByTitle.every((check) => check);
 
     if (duplicatedTitles) {
-      throw new ConfilctException(DUPLICATED_NOTICES_TITLE);
+      throw new ConfilctException(DUPLICATED_NOTICE_TITLE);
     }
 
     const notices = body.notices
@@ -183,7 +183,7 @@ export class NoticeService {
           const getTime = (date: string) => new Date(date).getTime();
           return getTime(b.createdAt) - getTime(a.createdAt);
         } else {
-          return b.applicantCount - a.applicantCount;
+          return b.applicantsCount - a.applicantsCount;
         }
       })
       .slice(skip, skip + take);
@@ -224,7 +224,7 @@ export class NoticeService {
         registeredAt: notice.registeredAt,
       };
       if (exists) {
-        exists.applicantCount++;
+        exists.applicantsCount++;
         exists.applicantIds.push(notice.userId);
         exists.applicants.push(applicant);
       } else {
@@ -236,7 +236,7 @@ export class NoticeService {
           description: notice.description,
           createdAt: notice.createdAt,
           updatedAt: notice.updatedAt,
-          applicantCount: notice.userEmail ? 1 : 0,
+          applicantsCount: notice.userEmail ? 1 : 0,
           applicantIds: [userId],
           applicants: [applicant],
         };

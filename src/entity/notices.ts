@@ -42,7 +42,7 @@ export type NoticeParseResult = {
   category: NoticesCategory;
   description: string;
   companyName: string;
-  applicantCount: number;
+  applicantsCount: number;
   applicantIds: string[];
   applicants: NoticeApplicant[];
   createdAt: string;

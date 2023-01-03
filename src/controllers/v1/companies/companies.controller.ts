@@ -21,7 +21,7 @@ export class CompaniesController extends BaseController {
     this.router.post("/", needsLogin, (req, res) => this.create(req, res));
     return this.router;
   }
-  // 강사 생성
+  // Create company
   async create(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(

@@ -71,7 +71,7 @@ export class NoticesController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 강의 대량 생성
+  // notice 대량 생성
   async bulkCreate(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(
@@ -90,7 +90,7 @@ export class NoticesController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 강의 수정
+  // notice 수정
   async update(req: Request, res: Response) {
     try {
       const { noticeId } = req.params;
@@ -116,7 +116,7 @@ export class NoticesController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 강의 오픈
+  // notice 오픈
   async publish(req: Request, res: Response) {
     try {
       const { noticeId } = req.params;
@@ -180,7 +180,6 @@ export class NoticesController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 수강 신청
   async register(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(

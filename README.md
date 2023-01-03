@@ -50,3 +50,4 @@ pnpm test:cov
 - TypeScript
 - Express
 - Tsyringe
+- Jest

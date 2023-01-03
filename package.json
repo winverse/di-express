@@ -1,6 +1,6 @@
 {
   "name": "di-express",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Implement dependency injection in epress without using orm",
   "main": "main.ts",
   "scripts": {
@@ -14,7 +14,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage"
   },
-  "keywords": ["Express", "dependency Injection"],
+  "keywords": ["express", "dependency Injection", "Testing", "jest"],
   "author": "public.winverse@gmail.com",
   "license": "MIT",
   "dependencies": {

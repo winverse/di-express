@@ -1,7 +1,10 @@
 # About
-Basic restApi following MVC pattern. (view model does not exist)  
-For dependency injection implementation, tsyringe was used over express.   
-Rowsql was used instead of orm
+Basic restApi following MVC pattern. (view model does not exist) For dependency injection implementation, tsyringe was used over express.   Rawsql was used instead of orm.
+
+# RestAPI
+ - Member registration and login
+ - Holding of employment announcements by companies
+ - Applicants apply for job openings
 
 
 # Install

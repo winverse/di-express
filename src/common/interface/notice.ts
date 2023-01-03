@@ -15,9 +15,9 @@ export const noticesCategory: NoticesCategory[] = [
   "planner",
 ];
 
-export type NoticeOrderBy = "createdAt" | "studentsCount";
+export type NoticeOrderBy = "createdAt" | "applicantsCount";
 
-export const noticeOrderBy: NoticeOrderBy[] = ["createdAt", "studentsCount"];
+export const noticeOrderBy: NoticeOrderBy[] = ["createdAt", "applicantsCount"];
 
 export type NoticesBuildArgs = {
   title: string;
@@ -31,11 +31,11 @@ export interface Notice {
   title: string;
   description: string;
   category: NoticesCategory;
-  compnayId: string;
+  companyId: string;
   company?: Company;
   isPublished: boolean;
   isDeleted: boolean;
-  students?: User[] | null;
+  applicants?: User[] | null;
   createdAt: string;
   updatedAt: string;
 }

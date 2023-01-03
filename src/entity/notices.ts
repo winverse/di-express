@@ -12,11 +12,11 @@ export class Notices implements Notice {
   title: string;
   description: string;
   category: NoticesCategory;
-  compnayId: string;
+  companyId: string;
   company: Companies;
   isPublished: boolean;
   isDeleted: boolean;
-  students?: User[];
+  applicants?: User[];
   createdAt: string;
   updatedAt: string;
 
@@ -26,7 +26,7 @@ export class Notices implements Notice {
     notice.title = title;
     notice.description = description;
     notice.category = category;
-    notice.compnayId = companyId;
+    notice.companyId = companyId;
     return notice;
   }
 }

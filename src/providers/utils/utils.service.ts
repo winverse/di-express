@@ -35,7 +35,7 @@ export class UtilsService {
       return false;
     }
   }
-  // bulk insert 구문에서 사용되는 values 부분 생성
+  // create raw sql for bulk insert
   rawSqlForBulkInsertValues(array: any[]): string {
     const isLast = (index: number, arr: any[]) => index === arr.length - 1;
     const result = array
@@ -53,8 +53,7 @@ export class UtilsService {
       });
     return result.join(",");
   }
-  // 객체의 값들 중에서 number로 바꿀 수 있는 값들은 number 타입으로 바꿈
-  // nestJS ValidationPipe의 transform 옵션을 영감 받음
+  // inspired from nestJS ValidationPipe transform
   stringToNumber<T>(origin: Record<string, any>): T {
     return Object.keys(origin)
       .filter((key) => !!Number(origin[key]))

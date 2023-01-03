@@ -69,7 +69,7 @@ export const mockNotice = {
   updatedAt: "2022-11-18 11:28:03",
 };
 
-export const mockNoticeWithStudents = {
+export const mockNoticeWithapplicants = {
   id: "clalvt2o10000hacd0nacahjf",
   title: "FMS(차량관제)플랫폼 백엔드 개발자(JAVA,SPRING)",
   description:
@@ -80,7 +80,7 @@ export const mockNoticeWithStudents = {
   companyId: "claja9xn40000nzcd1cq5b1si",
   createdAt: "2022-11-18 11:28:03",
   updatedAt: "2022-11-18 11:28:03",
-  students: [{ ...mockUser }],
+  applicants: [{ ...mockUser }],
 };
 
 export const mockNoticeList = [
@@ -212,7 +212,7 @@ export const mockNoticeListWithPage = {
       description:
         "시간, 공간, 도구, 신체의 제약 없이 소통하고 표현할 수 있는 세상을 그리고 있습니다",
       createdAt: "2022-11-20T08:42:38.618Z",
-      studentsCount: 3,
+      applicantsCount: 3,
     },
     {
       id: "clap42hsj008iwfcd8uce399g",
@@ -222,7 +222,7 @@ export const mockNoticeListWithPage = {
       description:
         "언리얼 엔진의 비주얼 스크립팅 시스템인 블루프린트를 프로그래머 관점에서",
       createdAt: "2022-11-20T08:42:38.618Z",
-      studentsCount: 1,
+      applicantsCount: 1,
     },
     {
       id: "clap42hsj008fwfcdgtkma5hp",
@@ -232,7 +232,7 @@ export const mockNoticeListWithPage = {
       description:
         "모빌리티 분야의 혁신을 통해 사람들의 삶을 더 즐겁고, 편하게 하는 플랫폼을 만듭니다. '스마트폰' 시대 구글과 애플처럼 '스마트카' 시대에 맞는 멋진 플랫폼을 성장시키려는 목표를 가지고 있어요.",
       createdAt: "2022-11-20T08:42:38.618Z",
-      studentsCount: 1,
+      applicantsCount: 1,
     },
     {
       id: "clap42hsj008gwfcd26mq1nuh",
@@ -242,7 +242,7 @@ export const mockNoticeListWithPage = {
       description:
         "모바일에서 실시간으로 사용자의 안면과 몸의 움직임을 정확하게 인식하고 최적화하는 차별성은 날비만의 원천기술입니다. ",
       createdAt: "2022-11-20T08:42:38.618Z",
-      studentsCount: 1,
+      applicantsCount: 1,
     },
   ],
   totalCount: 4,
@@ -256,8 +256,8 @@ export const mockNoticeDetailResult = {
   description: "Vue.js로 실무 ",
   createdAt: "2022-11-20T08:42:38.618Z",
   updatedAt: "2022-11-20T08:42:38.618Z",
-  studentsCount: 3,
-  students: [
+  applicantsCount: 3,
+  applicants: [
     {
       username: "clap42hq3000iwfcd7ssubsxd",
       registeredAt: "2022-11-20T08:42:38.654Z",

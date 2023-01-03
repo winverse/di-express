@@ -3,7 +3,7 @@ export const mockCompanyBuildArgs = {
   name: "오픈놀",
 };
 
-export const mockCompnayId = "claj4wxlg0000vtcd2qal2smr";
+export const mockcompanyId = "claj4wxlg0000vtcd2qal2smr";
 
 export const mockCompany = {
   id: "claj4wxlg0000vtcd2qal2smr",

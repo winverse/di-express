@@ -28,7 +28,7 @@ export class UsersController extends BaseController {
     );
     return this.router;
   }
-  // 회원가입
+  // register
   async create(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(
@@ -47,7 +47,7 @@ export class UsersController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 로그인
+  // login
   async login(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(
@@ -66,7 +66,6 @@ export class UsersController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 로그아웃
   async logout(req: Request, res: Response) {
     try {
       await this.cookieService.clearCookie(res, "access_token");
@@ -76,7 +75,6 @@ export class UsersController extends BaseController {
       this.handleError(res, error);
     }
   }
-  // 회원 탈퇴
   async withdrawal(req: Request, res: Response) {
     try {
       const validate = await this.utilsService.validateSchema(

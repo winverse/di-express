@@ -12,8 +12,8 @@ export const NOT_FOUND_NOTICE = "존재하지 않는 채용 공고 입니다.";
 export const ALREADY_DELETED_NOTICE = "삭제 된 채용 공고 입니다.";
 export const NOT_NOTICE_OWNER = "채용 공고 수정 권한이 없습니다.";
 export const CANNOT_REGISTER_NOTICES =
-  "수강 할 수 없는 채용 공고가 존재합니다.";
+  "등록 할 수 없는 채용 공고가 존재합니다.";
 export const EXISTS_ALREADY_TAKEN_NOTICE =
-  "이미 수강한 채용 공고가 존재합니다.";
-export const ALREADY_EXISTS_STUDENTS =
-  "수강생이 존재하는 채용 공고는 삭제할 수 없습니다.";
+  "이미 등록한 채용 공고가 존재합니다.";
+export const ALREADY_EXISTS_APPLICANTS =
+  "채용지원자가 존재하는 채용 공고는 삭제할 수 없습니다.";

@@ -85,7 +85,7 @@ export class NoticeRepository {
         return notice;
       }
 
-      // 지원자 정보와 함께 데이터를 불러올때
+      // data with applicants(user)
       const joinSql = `
         SELECT u.id, u.username, u.email, u."createdAt"
         FROM public."UserOnNotices" as uol
@@ -96,7 +96,7 @@ export class NoticeRepository {
       const joinSqlQueryResult = await this.dbService.query(joinSql, values);
       return {
         ...notice,
-        students: joinSqlQueryResult.rows,
+        applicants: joinSqlQueryResult.rows,
       };
     } catch (error) {
       throw new Error(error as any);

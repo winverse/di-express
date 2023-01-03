@@ -1,7 +1,7 @@
 # About
 Basic restApi following MVC pattern. (view model does not exist) For dependency injection implementation, tsyringe was used over express.   Rawsql was used instead of orm.
 
-# RestAPI
+# Feature
  - Member registration and login
  - Holding of employment announcements by companies
  - Applicants apply for job openings
@@ -47,6 +47,6 @@ pnpm test:cov
 ```
 
 # Stack
-- typeScript
-- express
-- tsyringe
+- TypeScript
+- Express
+- Tsyringe
